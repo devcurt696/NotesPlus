@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ request()->routeIs('notes.index') ? __('Notes') : __('Trash') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-blue-200">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <x-alert-success>
@@ -15,7 +15,7 @@
             <a href="{{ route('notes.create') }}" class="btn-link btn-lg mb-2">+ Add Note</a>
             @endif
             @forelse ($notes as $note)
-                <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
+                <div class="my-6 p-6 bg-blue-600 text-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                     <h2 class="font-bold text-2xl">
                         <a 
                         @if(request()->routeIs('notes.index'))                
